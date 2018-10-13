@@ -14,7 +14,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.get('/', function(req, res, next) {
-  youtube.search('')
+  youtube.search('', 10)
    .then(results => {
      res.json(results)
    })
