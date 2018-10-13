@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const YouTube = require('simple-youtube-api');
 const youtube = new YouTube('AIzaSyBIPs4-L8KAm1oymrXvAu-KzdxUKF7LqkQ');
+const faker = require('faker')
 /* GET users listing. */
 
 router.get('/:id', function(req, res, next) {
@@ -14,7 +15,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.get('/', function(req, res, next) {
-  youtube.search('', 10)
+  youtube.search(faker.lorem.word(), 20)
    .then(results => {
      res.json(results)
    })
